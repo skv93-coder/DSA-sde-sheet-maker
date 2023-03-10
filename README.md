@@ -12,7 +12,7 @@ Clone this repository:
 bash
 Copy code
 
-git clone https://github.com/skv93-coder/DSA-sde-sheet-make.git
+git clone https://github.com/skv93-coder/DSA-sde-sheet-maker.git
 Install the required Node packages:
 
 bash
