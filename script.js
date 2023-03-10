@@ -10,6 +10,7 @@ config();
 // If modifying these scopes, delete token.json.
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
 const spreadsheetId = process.env.sheetId;
+const sheetName = process.env.sheetName;
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
 // time.
@@ -92,7 +93,7 @@ async function getSheets(auth) {
   const sheets = google.sheets({ version: "v4", auth });
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId,
-    range: "Sheet3!C1:C1500",
+    range: `${sheetName}!C1:C3000`,
   });
   const rows = res.data.values;
   if (!rows || rows.length === 0) {
@@ -138,7 +139,7 @@ const writeSheet = async (auth) => {
       sheets.spreadsheets.values
         .update({
           spreadsheetId,
-          range: `Sheet3!B${arrOfQs.length + 1}:H${
+          range: `${sheetName}!B${arrOfQs.length + 1}:H${
             arrOfQs.length + 1 + newQs.length
           }`,
           valueInputOption: "RAW",
