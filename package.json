@@ -1,0 +1,16 @@
+{
+  "name": "script",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "@google-cloud/local-auth": "2.1.0",
+    "axios": "^1.3.4",
+    "dotenv": "^16.0.3",
+    "googleapis": "105"
+  }
+}
